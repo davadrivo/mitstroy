@@ -1,0 +1,159 @@
+.contact {
+  background-color: var(--color-white);
+}
+
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-top: 3rem;
+}
+
+.contact-card {
+  background-color: var(--color-gray-light);
+  padding: 50px 40px;
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-info-card {
+  /* В будущем здесь будет видео фон */
+}
+
+.contact-form-card {
+  /* В будущем здесь будет видео фон */
+}
+
+.contact-card-title {
+  font-size: 1.75rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-dark-blue);
+  margin-bottom: 2rem;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  flex: 1;
+}
+
+.contact-item {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.contact-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.contact-details {
+  flex: 1;
+}
+
+.contact-label {
+  font-size: 0.9rem;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-gray);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+}
+
+.contact-value {
+  font-size: 1.25rem;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-dark-blue);
+  text-decoration: none;
+  transition: color var(--transition-base);
+  display: block;
+}
+
+.contact-value:hover {
+  color: var(--color-orange);
+}
+
+/* Форма */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-input {
+  width: 100%;
+  padding: 16px 20px;
+  font-size: 1rem;
+  font-family: var(--font-family);
+  color: var(--color-dark-blue);
+  background-color: var(--color-white);
+  border: 1px solid rgba(26, 35, 50, 0.1);
+  border-radius: 40px;
+  transition: all var(--transition-base);
+  outline: none;
+}
+
+.form-input:focus {
+  border-color: var(--color-orange);
+  box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+}
+
+.form-input::placeholder {
+  color: var(--color-gray);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+  font-family: var(--font-family);
+}
+
+.contact-form-submit {
+  width: 100%;
+  margin-top: 10px;
+  padding: 18px;
+  font-size: 1.1rem;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin-top: 2rem;
+  }
+
+  .contact-card {
+    padding: 35px 25px;
+  }
+
+  .contact-card-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-item {
+    gap: 15px;
+  }
+
+  .contact-icon {
+    font-size: 1.75rem;
+  }
+
+  .contact-value {
+    font-size: 1.1rem;
+  }
+
+  .contact-form {
+    gap: 15px;
+  }
+}
