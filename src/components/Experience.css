@@ -1,0 +1,43 @@
+.experience {
+  background-color: var(--color-gray-light);
+}
+
+.experience-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.experience-text {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--color-gray-dark);
+}
+
+.experience-text p {
+  margin-bottom: 1.5rem;
+}
+
+.experience-text p:last-child {
+  margin-bottom: 0;
+}
+
+.experience-note {
+  font-size: 0.95rem;
+  color: var(--color-gray);
+  font-style: italic;
+  margin-top: 2rem !important;
+}
+
+@media (max-width: 768px) {
+  .experience-text {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .experience-note {
+    font-size: 0.9rem;
+  }
+}
+
+
+
