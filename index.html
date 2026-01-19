@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="МИТ Stroy - строительные и инженерные решения для промышленности. 10 лет опыта. Караганда и Казахстан.">
+  <meta name="description" content="МИТ Stroy - строительные и инженерные решения для промышленности. 20 лет опыта. Караганда и Казахстан.">
   <title>МИТ Stroy - Строительные и инженерные решения</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -110,7 +110,8 @@
       top: 0;
       left: 0;
       right: 0;
-      background-color: var(--color-white);
+      background-color: var(--color-dark-blue);
+      color: var(--color-white);
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
       z-index: 1000;
       transition: all var(--transition-base);
@@ -139,7 +140,7 @@
     .logo-text {
       font-size: 1.5rem;
       font-weight: var(--font-weight-bold);
-      color: var(--color-dark-blue);
+      color: var(--color-white);
       letter-spacing: -0.5px;
     }
 
@@ -150,7 +151,7 @@
     }
 
     .nav-desktop a {
-      color: var(--color-dark-blue);
+      color: var(--color-white);
       text-decoration: none;
       font-weight: var(--font-weight-medium);
       font-size: 0.95rem;
@@ -196,7 +197,7 @@
     .mobile-menu-toggle span {
       width: 25px;
       height: 2px;
-      background-color: var(--color-dark-blue);
+      background-color: var(--color-white);
       transition: all var(--transition-base);
     }
 
@@ -217,8 +218,8 @@
       flex-direction: column;
       gap: 20px;
       padding: 0;
-      background-color: var(--color-white);
-      border-top: 1px solid var(--color-gray-light);
+      background-color: var(--color-dark-blue);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
       max-height: 0;
       overflow: hidden;
       transition: max-height var(--transition-slow);
@@ -235,7 +236,7 @@
     }
 
     .nav-mobile a {
-      color: var(--color-dark-blue);
+      color: var(--color-white);
       text-decoration: none;
       font-weight: var(--font-weight-medium);
       padding: 10px 0;
@@ -302,11 +303,33 @@
       66% { transform: translate(-20px, 20px) rotate(240deg); }
     }
 
+    .hero-wrapper {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 420px);
+      gap: 60px;
+      align-items: center;
+      width: 100%;
+    }
+
     .hero-content {
       position: relative;
-      z-index: 1;
-      max-width: 800px;
+      z-index: 2;
       animation: fadeInUp 1s ease-out;
+    }
+
+    .hero-logo-container {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-logo-image {
+      width: 100%;
+      max-width: 420px;
+      height: auto;
+      object-fit: contain;
     }
 
     @keyframes fadeInUp {
@@ -717,6 +740,71 @@
       color: var(--color-gray-dark);
     }
 
+    .form-success-overlay {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(26, 35, 50, 0.6);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 3000;
+      padding: 20px;
+      animation: fadeIn var(--transition-base);
+    }
+
+    .form-success-overlay.active {
+      display: flex;
+    }
+
+    .form-success-modal {
+      position: relative;
+      background-color: var(--color-white);
+      border-radius: 24px;
+      max-width: 420px;
+      width: 100%;
+      padding: 32px 28px;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    }
+
+    .form-success-title {
+      font-size: 1.5rem;
+      font-weight: var(--font-weight-semibold);
+      color: var(--color-dark-blue);
+      margin-bottom: 12px;
+    }
+
+    .form-success-text {
+      font-size: 1rem;
+      color: var(--color-gray-dark);
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+
+    .form-success-close {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 32px;
+      height: 32px;
+      border: none;
+      background-color: rgba(26, 35, 50, 0.08);
+      border-radius: 50%;
+      color: var(--color-dark-blue);
+      font-size: 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--transition-base);
+      line-height: 1;
+    }
+
+    .form-success-close:hover {
+      background-color: var(--color-orange);
+      color: var(--color-white);
+    }
+
     /* Experience */
     .experience {
       background-color: var(--color-gray-light);
@@ -836,6 +924,90 @@
       color: var(--color-gray-dark);
     }
 
+    .map-popup-images-wrapper {
+      margin-top: 10px;
+      position: relative;
+    }
+
+    .map-popup-images-container {
+      position: relative;
+      width: 100%;
+    }
+
+    .map-popup-images {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+
+    .map-popup-image {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      object-fit: cover;
+      max-height: 160px;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      display: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .map-popup-image.active {
+      display: block;
+    }
+
+    .map-popup-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 30px;
+      height: 30px;
+      border: none;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 50%;
+      font-size: 20px;
+      color: var(--color-dark-blue);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--transition-base);
+      z-index: 10;
+      line-height: 1;
+      font-weight: 300;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .map-popup-nav:hover {
+      background-color: var(--color-orange);
+      color: var(--color-white);
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .map-popup-nav-prev {
+      left: 8px;
+    }
+
+    .map-popup-nav-next {
+      right: 8px;
+    }
+
+    .map-popup-images-counter {
+      margin-top: 8px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--color-gray-dark);
+    }
+
+    .map-popup-current {
+      font-weight: var(--font-weight-semibold);
+      color: var(--color-dark-blue);
+    }
+
+    .map-popup-address {
+      color: var(--color-gray-dark);
+    }
+
     .leaflet-popup-content-wrapper {
       border-radius: 20px;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
@@ -843,8 +1015,11 @@
     }
 
     .leaflet-popup-content {
-      margin: 20px;
+      margin: 15px;
       min-width: 250px;
+      position: relative;
+      padding-top: 5px;
+      padding-right: 5px;
     }
 
     .leaflet-popup-tip {
@@ -853,14 +1028,25 @@
     }
 
     .leaflet-popup-close-button {
-      color: var(--color-dark-blue);
-      font-size: 24px;
-      padding: 8px;
-      transition: color var(--transition-base);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background-color: var(--color-orange) !important;
+      color: var(--color-white);
+      font-size: 20px;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--transition-base);
+      line-height: 1;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      opacity: 1;
     }
 
     .leaflet-popup-close-button:hover {
-      color: var(--color-orange);
+      background-color: var(--color-orange-hover) !important;
+      color: var(--color-white);
     }
 
     .leaflet-control-zoom {
@@ -1126,6 +1312,26 @@
         padding: 100px 20px 60px;
       }
 
+      .hero-wrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .hero-content {
+        z-index: 2;
+        position: relative;
+      }
+
+      .hero-logo-container {
+        order: -1;
+        margin-bottom: 20px;
+      }
+
+      .hero-logo-image {
+        max-width: 300px;
+        width: 100%;
+      }
+
       .hero-title {
         font-size: 2.5rem;
       }
@@ -1277,6 +1483,28 @@
         font-size: 0.85rem;
       }
 
+      .map-popup-image {
+        max-height: 120px;
+      }
+
+      .map-popup-nav {
+        width: 25px;
+        height: 25px;
+        font-size: 18px;
+      }
+
+      .map-popup-nav-prev {
+        left: 5px;
+      }
+
+      .map-popup-nav-next {
+        right: 5px;
+      }
+
+      .map-popup-images-counter {
+        font-size: 0.8rem;
+      }
+
       .leaflet-popup-content {
         margin: 15px;
         min-width: 200px;
@@ -1418,13 +1646,18 @@
         <div class="hero-shape hero-shape-2"></div>
       </div>
       <div class="container">
-        <div class="hero-content">
-          <h1 class="hero-title">Надёжные инженерные<br>и строительные решения</h1>
-          <p class="hero-subtitle">
-            10 лет опыта работы с промышленными объектами. 
-            Строительство и монтаж под ключ по всему Казахстану.
-          </p>
-          <button class="btn btn-primary hero-cta" onclick="scrollToSection('contact')">Оставить заявку</button>
+        <div class="hero-wrapper">
+          <div class="hero-content">
+            <h1 class="hero-title">Надёжные инженерные<br>и строительные решения</h1>
+            <p class="hero-subtitle">
+            20 лет опыта работы с промышленными объектами. 
+              Строительство и монтаж под ключ по всему Казахстану.
+            </p>
+            <button class="btn btn-primary hero-cta" onclick="scrollToSection('contact')">Оставить заявку</button>
+          </div>
+          <div class="hero-logo-container">
+            <img src="https://i.ibb.co.com/YFHMYjzj/image-12.png" alt="МИТ Stroy" class="hero-logo-image">
+          </div>
         </div>
       </div>
     </section>
@@ -1436,7 +1669,7 @@
           <h2 class="section-title">О компании</h2>
           <div class="about-text">
             <p>
-              Компания «МИТ Stroy» работает на строительном рынке уже более 10 лет. 
+            Компания «МИТ Stroy» работает на строительном рынке уже более 20 лет. 
               За это время мы накопили значительный опыт в реализации проектов 
               промышленного и инженерного назначения.
             </p>
@@ -1495,8 +1728,8 @@
         <div class="why-us-grid">
           <div class="advantage-item">
             <div class="advantage-marker"></div>
-            <h3 class="advantage-title">10 лет опыта</h3>
-            <p class="advantage-description">Более десяти лет работы на строительном рынке Казахстана</p>
+            <h3 class="advantage-title">20 лет опыта</h3>
+            <p class="advantage-description">Более двадцати лет работы на строительном рынке Казахстана</p>
           </div>
           <div class="advantage-item">
             <div class="advantage-marker"></div>
@@ -1591,14 +1824,21 @@
                 <div class="contact-icon">📞</div>
                 <div class="contact-details">
                   <h4 class="contact-label">Телефон</h4>
-                  <a href="tel:+77001234567" class="contact-value">+7 (700) 123-45-67</a>
+                  <a href="tel:+77073693788" class="contact-value">+7 707 369 3788</a>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">💬</div>
+                <div class="contact-details">
+                  <h4 class="contact-label">WhatsApp</h4>
+                  <a href="https://wa.me/77073693788" target="_blank" class="contact-value">+7 707 369 3788</a>
                 </div>
               </div>
               <div class="contact-item">
                 <div class="contact-icon">✉️</div>
                 <div class="contact-details">
                   <h4 class="contact-label">Email</h4>
-                  <a href="mailto:info@mitstroy.kz" class="contact-value">info@mitstroy.kz</a>
+                  <a href="mailto:mitstroy09@gmail.com" class="contact-value">mitstroy09@gmail.com</a>
                 </div>
               </div>
               <div class="contact-item">
@@ -1647,11 +1887,11 @@
           <div class="footer-contacts">
             <div class="footer-contact-item">
               <span class="footer-contact-label">Телефон:</span>
-              <a href="tel:+77001234567" class="footer-contact-value">+7 (700) 123-45-67</a>
+              <a href="tel:+77073693788" class="footer-contact-value">+7 707 369 3788</a>
             </div>
             <div class="footer-contact-item">
               <span class="footer-contact-label">Email:</span>
-              <a href="mailto:info@mitstroy.kz" class="footer-contact-value">info@mitstroy.kz</a>
+              <a href="mailto:mitstroy09@gmail.com" class="footer-contact-value">mitstroy09@gmail.com</a>
             </div>
             <div class="footer-contact-item">
               <span class="footer-contact-label">Город:</span>
@@ -1660,11 +1900,21 @@
           </div>
         </div>
         <div class="footer-bottom">
-          <p class="footer-copyright">© МИТ Stroy, 10 лет опыта</p>
+          <p class="footer-copyright">© МИТ Stroy, 20 лет опыта</p>
         </div>
       </div>
     </div>
   </footer>
+
+  <!-- Form Success Modal -->
+  <div class="form-success-overlay" id="formSuccessModal" onclick="closeFormSuccess(event)">
+    <div class="form-success-modal" onclick="event.stopPropagation()">
+      <button class="form-success-close" aria-label="Закрыть" onclick="closeFormSuccess()">×</button>
+      <h3 class="form-success-title">Заявка отправлена</h3>
+      <p class="form-success-text">Спасибо! Мы свяжемся с вами в ближайшее время.</p>
+      <button class="btn btn-primary" onclick="closeFormSuccess()">Хорошо</button>
+    </div>
+  </div>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
@@ -1737,12 +1987,96 @@
 
     // Map projects data
     const mapProjects = [
-      { id: 1, title: "Промышленный объект №1", type: "Заливка бетона", city: "Караганда", lat: 49.806, lng: 73.085, year: "2022", description: "Бетонные работы на промышленной площадке" },
-      { id: 2, title: "Фильтрационная станция", type: "Система водоочистки", city: "Караганда", lat: 49.79, lng: 73.07, year: "2023", description: "Строительство системы очистки воды" },
-      { id: 3, title: "Цех монтажа станков", type: "Промышленные станки", city: "Караганда", lat: 49.815, lng: 73.095, year: "2021", description: "Монтаж промышленного оборудования" },
-      { id: 4, title: "Бетонное основание", type: "Заливка бетона", city: "Караганда", lat: 49.80, lng: 73.075, year: "2023", description: "Заливка бетонного фундамента" },
-      { id: 5, title: "Водоочистная установка", type: "Система водоочистки", city: "Караганда", lat: 49.82, lng: 73.08, year: "2022", description: "Проектирование и монтаж системы фильтрации" },
-      { id: 6, title: "Промышленный комплекс", type: "Промышленные станки", city: "Караганда", lat: 49.785, lng: 73.09, year: "2023", description: "Полный цикл работ по монтажу оборудования" }
+      {
+        id: 1,
+        title: "Промышленный объект №1",
+        type: "Заливка бетона",
+        city: "Караганда",
+        address: "ул. Промышленная, 45",
+        lat: 49.806,
+        lng: 73.085,
+        year: "2022",
+        description: "Бетонные работы на промышленной площадке",
+        images: [
+          'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&h=400&fit=crop',
+          'https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600&h=400&fit=crop'
+        ]
+      },
+      {
+        id: 2,
+        title: "Фильтрационная станция",
+        type: "Система водоочистки",
+        city: "Караганда",
+        address: "пр. Бухар-жырау, 28/1",
+        lat: 49.79,
+        lng: 73.07,
+        year: "2023",
+        description: "Строительство системы очистки воды",
+        images: [
+          'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&h=400&fit=crop',
+          'https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=600&h=400&fit=crop'
+        ]
+      },
+      {
+        id: 3,
+        title: "Цех монтажа станков",
+        type: "Промышленные станки",
+        city: "Караганда",
+        address: "ул. Металлургов, 12",
+        lat: 49.815,
+        lng: 73.095,
+        year: "2021",
+        description: "Монтаж промышленного оборудования",
+        images: [
+          'https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=400&fit=crop',
+          'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=400&fit=crop'
+        ]
+      },
+      {
+        id: 4,
+        title: "Бетонное основание",
+        type: "Заливка бетона",
+        city: "Караганда",
+        address: "ул. Строительная, 78",
+        lat: 49.80,
+        lng: 73.075,
+        year: "2023",
+        description: "Заливка бетонного фундамента",
+        images: [
+          'https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=600&h=400&fit=crop',
+          'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&h=400&fit=crop'
+        ]
+      },
+      {
+        id: 5,
+        title: "Водоочистная установка",
+        type: "Система водоочистки",
+        city: "Караганда",
+        address: "ул. Индустриальная, 35",
+        lat: 49.82,
+        lng: 73.08,
+        year: "2022",
+        description: "Проектирование и монтаж системы фильтрации",
+        images: [
+          'https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=600&h=400&fit=crop',
+          'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&h=400&fit=crop'
+        ]
+      },
+      {
+        id: 6,
+        title: "Промышленный комплекс",
+        type: "Промышленные станки",
+        city: "Караганда",
+        address: "пр. Республики, 56",
+        lat: 49.785,
+        lng: 73.09,
+        year: "2023",
+        description: "Полный цикл работ по монтажу оборудования",
+        images: [
+          'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=400&fit=crop',
+          'https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=600&h=400&fit=crop'
+        ]
+      }
     ];
 
     let currentProjectIndex = 0;
@@ -1887,13 +2221,36 @@
       const formData = new FormData(e.target);
       const data = Object.fromEntries(formData);
       console.log('Форма отправлена:', data);
-      alert('Спасибо! Мы свяжемся с вами в ближайшее время.');
+      showFormSuccess();
       e.target.reset();
+    }
+
+    function showFormSuccess() {
+      const modal = document.getElementById('formSuccessModal');
+      if (!modal) return;
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeFormSuccess(event) {
+      if (event && event.target !== event.currentTarget && !event.target.closest('.form-success-close')) {
+        return;
+      }
+      const modal = document.getElementById('formSuccessModal');
+      if (!modal) return;
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
     }
 
     // Initialize map
     function initMap() {
+      const mapContainer = document.getElementById('map');
+      if (!mapContainer) return;
+      
+      // Центр карты: Караганда
       const karagandaCenter = [49.8, 73.08];
+      
+      // Создание карты
       const map = L.map('map', {
         center: karagandaCenter,
         zoom: 11,
@@ -1901,28 +2258,58 @@
         zoomControl: true,
         attributionControl: true
       });
-
+      
+      // Добавление тайлов OpenStreetMap
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
         maxZoom: 19
       }).addTo(map);
-
+      
+      // Создание кастомных иконок маркеров
       const createMarkerIcon = (color) => {
         return L.divIcon({
           className: 'custom-marker',
-          html: `<div class="marker-pin" style="background-color: ${color}"><div class="marker-pin-inner"></div></div>`,
+          html: `<div class="marker-pin" style="background-color: ${color}">
+                   <div class="marker-pin-inner"></div>
+                 </div>`,
           iconSize: [30, 40],
           iconAnchor: [15, 40],
           popupAnchor: [0, -40]
         });
       };
-
+      
       const orangeIcon = createMarkerIcon('#ff6b35');
       const darkBlueIcon = createMarkerIcon('#1a2332');
-
+      
+      // Добавление маркеров для каждого проекта
       mapProjects.forEach((project, index) => {
+        // Чередование цветов маркеров
         const icon = index % 2 === 0 ? orangeIcon : darkBlueIcon;
-        const marker = L.marker([project.lat, project.lng], { icon }).addTo(map);
+        
+        const marker = L.marker([project.lat, project.lng], {
+          icon: icon
+        }).addTo(map);
+        
+        // Создание содержимого popup
+        let imagesHtml = '';
+        if (project.images && project.images.length > 0) {
+          const hasMultipleImages = project.images.length > 1;
+          
+          imagesHtml = `
+            <div class="map-popup-images-wrapper" data-project-id="${project.id}">
+              <div class="map-popup-images-container">
+                ${hasMultipleImages ? `<button class="map-popup-nav map-popup-nav-prev" onclick="navigateMapImage(${project.id}, -1)">‹</button>` : ''}
+                <div class="map-popup-images">
+                  ${project.images.map((img, idx) => 
+                    `<img src="${img}" alt="${project.title} ${idx + 1}" class="map-popup-image ${idx === 0 ? 'active' : ''}" data-index="${idx}">`
+                  ).join('')}
+                </div>
+                ${hasMultipleImages ? `<button class="map-popup-nav map-popup-nav-next" onclick="navigateMapImage(${project.id}, 1)">›</button>` : ''}
+              </div>
+              ${hasMultipleImages ? `<div class="map-popup-images-counter"><span class="map-popup-current">1</span> / ${project.images.length}</div>` : ''}
+            </div>
+          `;
+        }
         
         const popupContent = `
           <div class="map-popup">
@@ -1930,22 +2317,57 @@
             <div class="map-popup-info">
               <p class="map-popup-type"><strong>Тип работ:</strong> ${project.type}</p>
               <p class="map-popup-city"><strong>Город:</strong> ${project.city}</p>
+              <p class="map-popup-address"><strong>Адрес:</strong> ${project.address || project.city}</p>
               <p class="map-popup-year"><strong>Год:</strong> ${project.year}</p>
-              <p class="map-popup-description">${project.description}</p>
+              ${imagesHtml}
             </div>
           </div>
         `;
         
         marker.bindPopup(popupContent, {
           className: 'custom-popup',
-          maxWidth: 300,
+          maxWidth: 380,
           closeButton: true
         });
         
-        marker.on('mouseover', function() {
+        // Открытие popup только при клике
+        marker.on('click', function() {
           this.openPopup();
         });
       });
+    }
+
+    // Навигация по изображениям в popup карты
+    function navigateMapImage(projectId, direction) {
+      const wrapper = document.querySelector(`.map-popup-images-wrapper[data-project-id="${projectId}"]`);
+      if (!wrapper) return;
+      
+      const images = wrapper.querySelectorAll('.map-popup-image');
+      const currentImg = wrapper.querySelector('.map-popup-image.active');
+      if (!currentImg || images.length === 0) return;
+      
+      let currentIndex = parseInt(currentImg.dataset.index);
+      const totalImages = images.length;
+      
+      // Вычисляем новый индекс с зацикливанием
+      let newIndex = currentIndex + direction;
+      if (newIndex < 0) {
+        newIndex = totalImages - 1;
+      } else if (newIndex >= totalImages) {
+        newIndex = 0;
+      }
+      
+      // Убираем активный класс со всех изображений
+      images.forEach(img => img.classList.remove('active'));
+      
+      // Добавляем активный класс к новому изображению
+      images[newIndex].classList.add('active');
+      
+      // Обновляем счетчик
+      const counter = wrapper.querySelector('.map-popup-current');
+      if (counter) {
+        counter.textContent = newIndex + 1;
+      }
     }
 
     // Initialize
